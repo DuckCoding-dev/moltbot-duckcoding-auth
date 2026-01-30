@@ -1,6 +1,8 @@
 # moltbot-duckcoding-auth
 
 [![npm version](https://img.shields.io/npm/v/moltbot-duckcoding-auth)](https://www.npmjs.com/package/moltbot-duckcoding-auth)
+[![npm downloads](https://img.shields.io/npm/dm/moltbot-duckcoding-auth)](https://www.npmjs.com/package/moltbot-duckcoding-auth)
+[![license](https://img.shields.io/github/license/DuckCoding-dev/moltbot-duckcoding-auth)](https://github.com/DuckCoding-dev/moltbot-duckcoding-auth/blob/main/LICENSE)
 
 DuckCoding Claude provider 插件，用于 [OpenClaw](https://github.com/openclaw/openclaw) / Clawdbot（原 Moltbot）。
 
