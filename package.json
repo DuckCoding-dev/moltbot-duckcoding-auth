@@ -16,8 +16,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/DuckCoding-dev/moltbot-duckcoding-auth"
+    "url": "git+https://github.com/DuckCoding-dev/moltbot-duckcoding-auth.git"
   },
+  "homepage": "https://duckcoding.com",
   "openclaw": {
     "extensions": [
       "./index.ts"
