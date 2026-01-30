@@ -1,0 +1,51 @@
+{
+  "name": "moltbot-duckcoding-auth",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "DuckCoding Claude provider 插件（OpenClaw/Clawdbot）- 通过 DuckCoding API 访问 Claude 模型",
+  "author": "DuckCoding-dev",
+  "license": "MIT",
+  "keywords": [
+    "clawdbot",
+    "clawdbot-plugin",
+    "openclaw",
+    "openclaw-plugin",
+    "duckcoding",
+    "anthropic",
+    "claude"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DuckCoding-dev/moltbot-duckcoding-auth"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "clawdbot": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "files": [
+    "index.ts",
+    "src",
+    "clawdbot.plugin.json",
+    "openclaw.plugin.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "openclaw": ">=2026.1.0",
+    "clawdbot": ">=2026.1.0"
+  },
+  "peerDependenciesMeta": {
+    "openclaw": {
+      "optional": true
+    },
+    "clawdbot": {
+      "optional": true
+    }
+  }
+}

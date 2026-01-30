@@ -1,0 +1,11 @@
+{
+  "id": "moltbot-duckcoding-auth",
+  "providers": [
+    "duckcoding-claude"
+  ],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}
