@@ -1,6 +1,6 @@
 {
   "name": "moltbot-duckcoding-auth",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "description": "DuckCoding Claude provider 插件（OpenClaw/Clawdbot）- 通过 DuckCoding API 访问 Claude 模型",
   "author": "DuckCoding-dev",
