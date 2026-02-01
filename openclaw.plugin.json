@@ -1,9 +1,9 @@
 {
   "id": "moltbot-duckcoding-auth",
   "name": "DuckCoding",
-  "description": "通过 DuckCoding API 访问 Claude 模型",
+  "description": "通过 DuckCoding API 访问 CodeX 模型",
   "providers": [
-    "duckcoding-claude"
+    "duckcoding"
   ],
   "configSchema": {
     "type": "object",

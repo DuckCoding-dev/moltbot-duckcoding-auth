@@ -1,9 +1,9 @@
 import {
-  DUCKCODING_CLAUDE_BASE_URL,
-  PROVIDER_ID_CLAUDE,
+  DUCKCODING_CODEX_BASE_URL,
+  PROVIDER_ID_DUCKCODING,
   AUTH_PROFILE_ID,
 } from "./constants.js";
-import { DUCKCODING_CLAUDE_MODELS } from "./models.js";
+import { DUCKCODING_CODEX_MODELS } from "./models.js";
 
 function validateApiKey(value: string): string | undefined {
   const trimmed = value.trim();
@@ -16,7 +16,7 @@ export function createDuckcodingAuthMethod() {
   return {
     id: "api_key",
     label: "DuckCoding API Key",
-    hint: "请输入 DuckCoding API Key（Claude Code 专用 - Kiro 分组）",
+    hint: "请输入 DuckCoding API Key（CodeX专用（Droid/OpenClaw））",
     kind: "api_key" as const,
     run: async (ctx: {
       prompter: {
@@ -28,13 +28,13 @@ export function createDuckcodingAuthMethod() {
       };
     }) => {
       const apiKey = await ctx.prompter.text({
-        message: "DuckCoding API Key（Claude Code 专用 - Kiro 分组）",
+        message: "DuckCoding API Key（CodeX专用（Droid/OpenClaw））",
         placeholder: "sk-...",
         validate: validateApiKey,
       });
 
       const trimmedKey = apiKey.trim();
-      const defaultModelRef = `${PROVIDER_ID_CLAUDE}/claude-sonnet-4-5-20250929`;
+      const defaultModelRef = `${PROVIDER_ID_DUCKCODING}/gpt-5.2-codex`;
 
       return {
         profiles: [
@@ -50,11 +50,11 @@ export function createDuckcodingAuthMethod() {
         configPatch: {
           models: {
             providers: {
-              [PROVIDER_ID_CLAUDE]: {
-                baseUrl: DUCKCODING_CLAUDE_BASE_URL,
+              [PROVIDER_ID_DUCKCODING]: {
+                baseUrl: DUCKCODING_CODEX_BASE_URL,
                 apiKey: trimmedKey,
-                api: "anthropic-messages",
-                models: DUCKCODING_CLAUDE_MODELS,
+                api: "openai-responses",
+                models: DUCKCODING_CODEX_MODELS,
               },
             },
           },
@@ -63,8 +63,8 @@ export function createDuckcodingAuthMethod() {
               model: defaultModelRef,
               models: {
                 ...Object.fromEntries(
-                  DUCKCODING_CLAUDE_MODELS.map((m) => [
-                    `${PROVIDER_ID_CLAUDE}/${m.id}`,
+                  DUCKCODING_CODEX_MODELS.map((m) => [
+                    `${PROVIDER_ID_DUCKCODING}/${m.id}`,
                     {},
                   ])
                 ),
@@ -74,8 +74,8 @@ export function createDuckcodingAuthMethod() {
         },
         defaultModel: defaultModelRef,
         notes: [
-          "DuckCoding 提供 Claude 模型访问。",
-          "模型可用 duckcoding-claude/ 前缀调用。",
+          "DuckCoding 提供 CodeX 模型访问。",
+          "模型可用 duckcoding/ 前缀调用。",
         ],
       };
     },

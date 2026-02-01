@@ -4,9 +4,9 @@
 [![npm downloads](https://img.shields.io/npm/dm/moltbot-duckcoding-auth)](https://www.npmjs.com/package/moltbot-duckcoding-auth)
 [![license](https://img.shields.io/github/license/DuckCoding-dev/moltbot-duckcoding-auth)](https://github.com/DuckCoding-dev/moltbot-duckcoding-auth/blob/main/LICENSE)
 
-DuckCoding Claude provider 插件，用于 [OpenClaw](https://github.com/openclaw/openclaw) / Clawdbot（原 Moltbot）。
+DuckCoding CodeX provider 插件，用于 [OpenClaw](https://github.com/openclaw/openclaw) / Clawdbot（原 Moltbot）。
 
-通过 DuckCoding API 访问 Claude 模型。官网：https://duckcoding.com
+通过 DuckCoding API 访问 CodeX 模型。官网：https://duckcoding.com
 
 ## 安装
 
@@ -33,25 +33,25 @@ openclaw plugins enable moltbot-duckcoding-auth
 安装后使用 DuckCoding API Key 认证：
 
 ```bash
-openclaw models auth login --provider duckcoding-claude --set-default
+openclaw models auth login --provider duckcoding --set-default
 ```
 
-请使用 **Claude Code 专用 - Kiro 分组** 的 Key。
+请使用 **CodeX专用（Droid/OpenClaw）** 的 Key。
 
 ## 支持的模型
 
 | Provider | Model ID | 描述 |
 |----------|----------|------|
-| Claude | `duckcoding-claude/claude-sonnet-4-5-20250929` | Claude Sonnet 4.5 (200K context) |
+| CodeX | `duckcoding/gpt-5.2-codex` | GPT 5.2 CodeX (400K context) |
 
 ## 使用
 
 ```bash
-# 使用默认模型（Claude Sonnet 4.5）
+# 使用默认模型（GPT 5.2 CodeX）
 openclaw agent --message "你好"
 
 # 指定模型
-openclaw agent --model duckcoding-claude/claude-sonnet-4-5-20250929 --message "你好"
+openclaw agent --model duckcoding/gpt-5.2-codex --message "你好"
 
 # 查看可用模型
 openclaw models list | grep duckcoding

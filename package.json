@@ -1,8 +1,8 @@
 {
   "name": "moltbot-duckcoding-auth",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "type": "module",
-  "description": "DuckCoding Claude provider 插件（OpenClaw/Clawdbot）- 通过 DuckCoding API 访问 Claude 模型",
+  "description": "DuckCoding CodeX provider 插件（OpenClaw/Clawdbot）- 通过 DuckCoding API 访问 CodeX 模型",
   "author": "DuckCoding-dev",
   "license": "MIT",
   "keywords": [
@@ -11,8 +11,9 @@
     "openclaw",
     "openclaw-plugin",
     "duckcoding",
-    "anthropic",
-    "claude"
+    "openai",
+    "gpt",
+    "codex"
   ],
   "repository": {
     "type": "git",

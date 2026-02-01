@@ -2,11 +2,11 @@ import {
   PLUGIN_ID,
   PLUGIN_NAME,
   PLUGIN_DESCRIPTION,
-  PROVIDER_ID_CLAUDE,
-  DUCKCODING_CLAUDE_BASE_URL,
+  PROVIDER_ID_DUCKCODING,
+  DUCKCODING_CODEX_BASE_URL,
   DUCKCODING_API_KEY_ENV,
 } from "./src/constants.js";
-import { DUCKCODING_CLAUDE_MODELS } from "./src/models.js";
+import { DUCKCODING_CODEX_MODELS } from "./src/models.js";
 import { createDuckcodingAuthMethod } from "./src/auth.js";
 
 const EMPTY_PLUGIN_CONFIG_SCHEMA = {
@@ -44,13 +44,13 @@ const duckcodingPlugin = {
     const authMethod = createDuckcodingAuthMethod();
 
     api.registerProvider({
-      id: PROVIDER_ID_CLAUDE,
-      label: "DuckCoding Claude",
+      id: PROVIDER_ID_DUCKCODING,
+      label: "DuckCoding CodeX",
       envVars: [DUCKCODING_API_KEY_ENV],
       models: {
-        baseUrl: DUCKCODING_CLAUDE_BASE_URL,
-        api: "anthropic-messages",
-        models: DUCKCODING_CLAUDE_MODELS,
+        baseUrl: DUCKCODING_CODEX_BASE_URL,
+        api: "openai-responses",
+        models: DUCKCODING_CODEX_MODELS,
       },
       auth: [authMethod],
     });

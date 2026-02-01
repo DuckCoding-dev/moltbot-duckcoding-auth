@@ -1,6 +1,6 @@
 # OpenClaw + DuckCoding 安装教程
 
-通过 DuckCoding 插件，在 OpenClaw 中使用 Claude 模型。
+通过 DuckCoding 插件，在 OpenClaw 中使用 CodeX 模型。
 
 官网：https://duckcoding.com
 
@@ -52,10 +52,10 @@ openclaw gateway run
 运行认证命令：
 
 ```bash
-openclaw models auth login --provider duckcoding-claude --set-default
+openclaw models auth login --provider duckcoding --set-default
 ```
 
-按提示输入你的 **DuckCoding API Key（Claude Code 专用 - Kiro 分组）**。
+按提示输入你的 **DuckCoding API Key（CodeX专用（Droid/OpenClaw））**。
 
 （截图）
 
@@ -70,7 +70,7 @@ openclaw models list | grep duckcoding
 （截图）
 
 你应该能看到以下模型：
-- `duckcoding-claude/claude-sonnet-4-5-20250929`
+- `duckcoding/gpt-5.2-codex`
 
 > 如果你使用 clawdbot，将命令中的 `openclaw` 替换为 `clawdbot`。
 
@@ -94,9 +94,9 @@ openclaw onboard --install-daemon
 （截图）
 4) 模型供应商选择 **跳过**
 （截图）
-5) Provider 选择 **duckcoding**（推荐使用 Claude，工具调用能力强）
+5) Provider 选择 **duckcoding**（推荐使用 CodeX）
 （截图）
-6) 选择默认模型：`claude-sonnet-4-5-20250929`
+6) 选择默认模型：`gpt-5.2-codex`
 （截图）
 7) 聊天渠道先 **跳过**，后续再配置
 （截图）
@@ -121,11 +121,11 @@ openclaw onboard --install-daemon
 ### 6. 使用
 
 ```bash
-# 使用默认模型 (Claude Sonnet 4.5)
+# 使用默认模型 (GPT 5.2 CodeX)
 openclaw agent --message "你好"
 
 # 指定模型
-openclaw agent --model duckcoding-claude/claude-sonnet-4-5-20250929 --message "你好"
+openclaw agent --model duckcoding/gpt-5.2-codex --message "你好"
 ```
 
 ---
@@ -176,10 +176,10 @@ openclaw gateway run
 运行认证命令：
 
 ```powershell
-openclaw models auth login --provider duckcoding-claude --set-default
+openclaw models auth login --provider duckcoding --set-default
 ```
 
-按提示输入你的 **DuckCoding API Key（Claude Code 专用 - Kiro 分组）**。
+按提示输入你的 **DuckCoding API Key（CodeX专用（Droid/OpenClaw））**。
 
 （截图）
 
@@ -213,9 +213,9 @@ openclaw onboard --install-daemon
 （截图）
 4) 模型供应商选择 **跳过**
 （截图）
-5) Provider 选择 **duckcoding**（推荐使用 Claude，工具调用能力强）
+5) Provider 选择 **duckcoding**（推荐使用 CodeX）
 （截图）
-6) 选择默认模型：`claude-sonnet-4-5-20250929`
+6) 选择默认模型：`gpt-5.2-codex`
 （截图）
 7) 聊天渠道先 **跳过**，后续再配置
 （截图）
@@ -240,11 +240,11 @@ openclaw onboard --install-daemon
 ### 6. 使用
 
 ```powershell
-# 使用默认模型 (Claude Sonnet 4.5)
+# 使用默认模型 (GPT 5.2 CodeX)
 openclaw agent --message "你好"
 
 # 指定模型
-openclaw agent --model duckcoding-claude/claude-sonnet-4-5-20250929 --message "你好"
+openclaw agent --model duckcoding/gpt-5.2-codex --message "你好"
 ```
 
 ---
@@ -253,7 +253,7 @@ openclaw agent --model duckcoding-claude/claude-sonnet-4-5-20250929 --message "�
 
 | Provider | Model ID | 描述 |
 |----------|----------|------|
-| Claude | `duckcoding-claude/claude-sonnet-4-5-20250929` | Claude Sonnet 4.5 (200K context) |
+| CodeX | `duckcoding/gpt-5.2-codex` | GPT 5.2 CodeX (400K context) |
 
 ---
 
@@ -270,7 +270,7 @@ openclaw plugins install moltbot-duckcoding-auth
 openclaw plugins enable moltbot-duckcoding-auth
 
 # 3. 登录并设置默认模型
-openclaw models auth login --provider duckcoding-claude --set-default
+openclaw models auth login --provider duckcoding --set-default
 
 # 4. 测试
 openclaw agent --message "你好"

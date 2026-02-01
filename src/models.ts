@@ -1,11 +1,11 @@
-export const DUCKCODING_CLAUDE_MODELS = [
+export const DUCKCODING_CODEX_MODELS = [
   {
-    id: "claude-sonnet-4-5-20250929",
-    name: "Claude Sonnet 4.5",
+    id: "gpt-5.2-codex",
+    name: "GPT 5.2 CodeX",
     reasoning: true,
     input: ["text", "image"] as const,
-    cost: { input: 3, output: 15, cacheRead: 0.3, cacheWrite: 3.75 },
-    contextWindow: 200000,
-    maxTokens: 64000,
+    cost: { input: 1.75, output: 14, cacheRead: 0.175, cacheWrite: 0 },
+    contextWindow: 400000,
+    maxTokens: 128000,
   },
 ];

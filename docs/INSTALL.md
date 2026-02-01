@@ -1,13 +1,13 @@
 # moltbot-duckcoding-auth 安装教程
 
-DuckCoding Claude provider 插件（OpenClaw / Clawdbot） - 通过 DuckCoding API 访问 Claude 模型。
+DuckCoding CodeX provider 插件（OpenClaw / Clawdbot） - 通过 DuckCoding API 访问 CodeX 模型。
 
 官网：https://duckcoding.com
 
 ## 前置要求
 
 - 已安装 [OpenClaw](https://github.com/openclaw/openclaw)
-- DuckCoding API Key（Claude Code 专用 - Kiro 分组）
+- DuckCoding API Key（CodeX专用（Droid/OpenClaw））
 
 ## 安装步骤
 
@@ -53,10 +53,10 @@ openclaw gateway run
 ### 3. 配置 API Key
 
 ```bash
-openclaw models auth login --provider duckcoding-claude --set-default
+openclaw models auth login --provider duckcoding --set-default
 ```
 
-按提示输入你的 DuckCoding API Key（Claude Code 专用 - Kiro 分组）。
+按提示输入你的 DuckCoding API Key（CodeX专用（Droid/OpenClaw））。
 
 （截图）
 
@@ -71,7 +71,7 @@ openclaw models list | grep duckcoding
 你应该能看到以下模型：
 
 ```
-duckcoding-claude/claude-sonnet-4-5-20250929
+duckcoding/gpt-5.2-codex
 ```
 
 > 如果你使用 clawdbot，将命令中的 `openclaw` 替换为 `clawdbot`。
@@ -96,9 +96,9 @@ openclaw onboard --install-daemon
 （截图）
 4) 模型供应商选择 **跳过**
 （截图）
-5) Provider 选择 **duckcoding**（推荐使用 Claude，工具调用能力强）
+5) Provider 选择 **duckcoding**（推荐使用 CodeX）
 （截图）
-6) 选择默认模型：`claude-sonnet-4-5-20250929`
+6) 选择默认模型：`gpt-5.2-codex`
 （截图）
 7) 聊天渠道先 **跳过**，后续再配置
 （截图）
@@ -123,18 +123,18 @@ openclaw onboard --install-daemon
 ## 使用方法
 
 ```bash
-# 使用默认模型 (Claude Sonnet 4.5)
+# 使用默认模型 (GPT 5.2 CodeX)
 openclaw agent --message "你好"
 
 # 指定模型
-openclaw agent --model duckcoding-claude/claude-sonnet-4-5-20250929 --message "你好"
+openclaw agent --model duckcoding/gpt-5.2-codex --message "你好"
 ```
 
 ## 支持的模型
 
 | Provider | Model ID | 描述 |
 |----------|----------|------|
-| Claude | `duckcoding-claude/claude-sonnet-4-5-20250929` | Claude Sonnet 4.5 (200K context) |
+| CodeX | `duckcoding/gpt-5.2-codex` | GPT 5.2 CodeX (400K context) |
 
 ## 环境变量（可选）
 
@@ -165,5 +165,5 @@ openclaw plugins enable moltbot-duckcoding-auth
 重新配置 API Key：
 
 ```bash
-openclaw models auth login --provider duckcoding-claude
+openclaw models auth login --provider duckcoding
 ```

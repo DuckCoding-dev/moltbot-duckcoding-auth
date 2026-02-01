@@ -1,7 +1,7 @@
 {
   "id": "moltbot-duckcoding-auth",
   "providers": [
-    "duckcoding-claude"
+    "duckcoding"
   ],
   "configSchema": {
     "type": "object",
